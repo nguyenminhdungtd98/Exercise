@@ -688,7 +688,7 @@ namespace ConsoleApp1
             int max = list[0];
             for (int i = 0; i < soLuongChuSo(intN); i++)
             {
-                    if (i < (list.Length - 1) / 2)
+                    if (i < (list.Length - 1))
                     {
                         if (max < list[i + 1])
                         {
@@ -705,7 +705,7 @@ namespace ConsoleApp1
             int min = list[0];
             for (int i = 0; i < soLuongChuSo(intN)-1; i++)
             {
-                if (i < (list.Length - 1) / 2)
+                if (i < (list.Length - 1))
                 {
                     if (min > list[i + 1])
                     {
@@ -811,5 +811,51 @@ namespace ConsoleApp1
                 Console.WriteLine(" Số nguyên dương {0} là: số đối xứng", intN);
             }else Console.WriteLine(" Số nguyên dương {0} không phải là: số đối xứng", intN);
         }
+        public static void bai60(int intN)//Bài 60: Hãy kiểm tra các chữ số của số nguyên dương n có tăng dần từ trái sang phải hay không
+        {
+            int[] list = danhSachChuSo(intN);
+            int j = soLuongChuSo(intN);
+            bool result = true;
+            for (int i = soLuongChuSo(intN) - 1; i >=0; i--)
+            {
+                if (i < j-1)
+                {
+                    if (list[i + 1]> list[i])
+                    {
+                        result = false;
+                        break;
+                    }
+                } 
+            }
+            if (result == true)
+            {
+                Console.WriteLine("Các chữ số của số nguyên dương {0} tăng dần từ trái sang phải",intN);
+            }
+            else Console.WriteLine("Các chữ số của số nguyên dương {0} khoong xếp tăng dần từ trái sang phải", intN);
+        }
+        public static void bai61(int intN) //Bài 61: Hãy kiểm tra các chữ số của số nguyên dương n có giảm dần từ trái sang phải hay không
+        {
+            int[] list = danhSachChuSo(intN);
+            int j = soLuongChuSo(intN);
+            bool result = true;
+            for (int i = soLuongChuSo(intN) - 1; i >= 0; i--)
+            {
+                if (i < j - 1)
+                {
+                    if (list[i + 1] < list[i])
+                    {
+                        result = false;
+                        break;
+                    }
+                }
+            }
+            if (result == true)
+            {
+                Console.WriteLine("Các chữ số của số nguyên dương {0} xếp giảm dần từ trái sang phải", intN); 
+            }
+            else Console.WriteLine("Các chữ số của số nguyên dương {0} không xếp giảm dần từ trái sang phải", intN);
+        }
     }
+
+
 }

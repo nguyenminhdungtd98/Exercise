@@ -709,5 +709,94 @@ namespace ConsoleApp1
             }
             Console.WriteLine(" Chữ số nhỏ nhất của số nguyên dương {0} là: {1}", intN, min);
         }
+        public static void bai53(int intN) //Bài 53: Hãy đếm số lượng chữ số lớn nhất của số nguyên dương n
+        {
+            int[] list = danhSachChuSo(intN);
+            int j = soLuongChuSo(intN);
+            int max = list[0];
+            int count = 0;
+            for (int i = 0; i < soLuongChuSo(intN); i++)
+            {
+                if (i < (list.Length - 1) / 2)
+                {
+                    if (max < list[i + 1])
+                    {
+                        max = list[i + 1];
+                    }
+                }
+            }
+            for (int i = 0; i < soLuongChuSo(intN); i++)
+            {
+                if (list[i] == max)
+                {
+                    count++;
+                }
+            }
+
+                Console.WriteLine("Số lượng của Chữ số lớn nhất của số nguyên dương {0} là: {1}", intN, count);
+        }
+        public static void bai54(int intN) //Bài 54: Hãy đếm số lượng chữ số nhỏ nhất của số nguyên dương n
+        {
+            int[] list = danhSachChuSo(intN);
+            int j = soLuongChuSo(intN);
+            int min = list[0];
+            int count = 0;
+            for (int i = 0; i < soLuongChuSo(intN) - 1; i++)
+            {
+                if (i < (list.Length - 1) / 2)
+                {
+                    if (min > list[i + 1])
+                    {
+                        min = list[i + 1];
+                    }
+                }
+            }
+            for (int i = 0; i < soLuongChuSo(intN); i++)
+            {
+                if (list[i] == min)
+                {
+                    count++;
+                }
+            }
+
+            Console.WriteLine("Số lượng của Chữ số nhỏ nhất của số nguyên dương {0} là: {1}", intN, count);
+        }
+        public static void bai56(int intN) //Bài 56: Hãy kiểm tra số nguyên dương n có toàn chữ số lẻ hay không
+        {
+            int[] list = danhSachChuSo(intN);
+            bool result = true;
+            for (int i = 0; i < soLuongChuSo(intN); i++)
+            {
+                if (list[i] % 2 == 0)
+                {
+                    result = false;
+                    break;
+                }
+            }
+            if (result)
+            {
+                Console.WriteLine("Số nguyên dương {0} có toàn là chữ số lẻ",intN);
+            }
+            else Console.WriteLine("Số nguyên dương {0} có chữ số chẳn",intN);
+
+        }
+        public static void bai57(int intN) //Bài 57: Hãy kiểm tra số nguyên dương n có toàn chữ số chẵn hay không
+        {
+            int[] list = danhSachChuSo(intN);
+            bool result = true;
+            for (int i = 0; i < soLuongChuSo(intN); i++)
+            {
+                if (list[i] % 2 != 0)
+                {
+                    result = false;
+                    break;
+                }
+            }
+            if (result== false)
+            {
+                Console.WriteLine("Số nguyên dương {0} có chữ chữ số lẻ", intN);
+            }
+            else Console.WriteLine("Số nguyên dương {0} có toàn là chữ số chẳn", intN);
+        }
     }
 }

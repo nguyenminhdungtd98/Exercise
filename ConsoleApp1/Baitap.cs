@@ -658,5 +658,11 @@ namespace ConsoleApp1
             }
             Console.WriteLine("Tích các chữ số lẻ của số nguyên dương {0} là: {1}", intN, result);
         }
+        public static void bai49(int intN) //Bài 49: Cho số nguyên dương n. Hãy tìm chữ số đầu tiên của n
+        {
+            int[] list = danhSachChuSo(intN);
+            Console.WriteLine("Chữ số đầu tiên của số nguyên dương {0} là: {1}", intN, list[soLuongChuSo(intN)-1]);
+        }
+
     }
 }

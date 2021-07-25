@@ -663,6 +663,17 @@ namespace ConsoleApp1
             int[] list = danhSachChuSo(intN);
             Console.WriteLine("Chữ số đầu tiên của số nguyên dương {0} là: {1}", intN, list[soLuongChuSo(intN)-1]);
         }
-
+        public static void bai50(int intN) //Bài 50: Hãy tìm số đảo ngược của số nguyên dương n
+        {
+            int[] list = danhSachChuSo(intN);
+            int result = 0;
+            int j = soLuongChuSo(intN);
+            for (int i = 0; i < soLuongChuSo(intN); i++)
+            {
+                result += (list[i] * LuyThuaXN(10, j-1));
+                j--;
+            }
+            Console.WriteLine(" Số đảo ngược của số nguyên dương {0} là: {1}", intN, result);
+        }
     }
 }

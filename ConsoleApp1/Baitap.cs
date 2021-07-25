@@ -599,5 +599,15 @@ namespace ConsoleApp1
         {
                 Console.Write("Số lương chữ số của số nguyên dương {0} là: {1}", intN,soLuongChuSo(intN)); 
         }            
+        public static void bai44(int intN) //Bài 44: Hãy tính tổng các chữ số của số nguyên dương n
+        {
+            int[] list = danhSachChuSo(intN);
+            int result = 0;
+            for (int i = 0; i< soLuongChuSo(intN); i++)
+            {
+                result += list[i];
+            }
+            Console.WriteLine("Tổng các chữ số của số nguyên dương {0} là: {1}",intN,result);
+        }
     }
 }

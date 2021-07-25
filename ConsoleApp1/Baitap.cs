@@ -692,5 +692,22 @@ namespace ConsoleApp1
             }
             Console.WriteLine(" Chữ số lớn nhất của số nguyên dương {0} là: {1}", intN, max);
         }
+        public static void bai52(int intN) //Bài 52: Tìm chữ số nhỏ nhất của số nguyên dương n
+        {
+            int[] list = danhSachChuSo(intN);
+            int j = soLuongChuSo(intN);
+            int min = list[0];
+            for (int i = 0; i < soLuongChuSo(intN)-1; i++)
+            {
+                if (i < (list.Length - 1) / 2)
+                {
+                    if (min > list[i + 1])
+                    {
+                        min = list[i + 1];
+                    }
+                }
+            }
+            Console.WriteLine(" Chữ số nhỏ nhất của số nguyên dương {0} là: {1}", intN, min);
+        }
     }
 }

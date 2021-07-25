@@ -675,5 +675,22 @@ namespace ConsoleApp1
             }
             Console.WriteLine(" Số đảo ngược của số nguyên dương {0} là: {1}", intN, result);
         }
+        public static void bai51(int intN) //Bài 51: Tìm chữ số lớn nhất của số nguyên dương n
+        {
+            int[] list = danhSachChuSo(intN);
+            int j = soLuongChuSo(intN);
+            int max = list[0];
+            for (int i = 0; i < soLuongChuSo(intN); i++)
+            {
+                    if (i < (list.Length - 1) / 2)
+                    {
+                        if (max < list[i + 1])
+                        {
+                            max = list[i + 1];
+                        }
+                    }
+            }
+            Console.WriteLine(" Chữ số lớn nhất của số nguyên dương {0} là: {1}", intN, max);
+        }
     }
 }

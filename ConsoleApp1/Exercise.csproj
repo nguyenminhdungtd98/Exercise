@@ -3,6 +3,8 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
+    <AssemblyName>Exercise</AssemblyName>
+    <RootNamespace>Exercise</RootNamespace>
   </PropertyGroup>
 
 </Project>

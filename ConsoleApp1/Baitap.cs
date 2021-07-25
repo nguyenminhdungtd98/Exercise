@@ -320,7 +320,7 @@ namespace ConsoleApp1
                     result += items;
                 }
             }
-            Console.WriteLine("Tổng các ước số chẳn của {0} là: {1} ", intN,result);
+            Console.WriteLine("Tổng các ước số chẳn của {0} là: {1} ", intN, result);
 
         }
         public static void bai26(int intN) //Bài 26: Tính tích tất cả các “ước số lẻ” của số nguyên dương n
@@ -338,7 +338,7 @@ namespace ConsoleApp1
             Console.WriteLine("Tích các ước số chẳn của {0} là: {1} ", intN, result);
         }
         public static void bai27(int intN) //Bài 27: Đếm số lượng “ước số chẵn” của số nguyên dương n
-        {              
+        {
             List<int> list = new List<int>();
             List<int> list1 = new List<int>();
             list = Uocso(intN);
@@ -362,7 +362,7 @@ namespace ConsoleApp1
                 if (items < intN)
                 {
                     result += items;
-                }              
+                }
             }
             Console.WriteLine("Tổng ước số của {0} là: {1} ", intN, result);
         }
@@ -372,20 +372,20 @@ namespace ConsoleApp1
             int[] list1 = new int[200];
             int j = 0;
             int k = 0;
-            for (int i=0; i < list.Length;i++)
+            for (int i = 0; i < list.Length; i++)
             {
                 if (list[i] % 2 != 0)
                 {
-                    
+
                     Console.WriteLine(list[i]);
                     list1[k] = list[i];
                     k++;
                 }
             }
             int max = list1[0];
-            for (int i =0; i<list1.Length/2;i++)
+            for (int i = 0; i < list1.Length / 2; i++)
             {
-                if (i < (list1.Length-1)/2) 
+                if (i < (list1.Length - 1) / 2)
                 {
                     if (max < list1[i + 1])
                     {
@@ -393,7 +393,7 @@ namespace ConsoleApp1
                     }
                 }
             }
-            Console.WriteLine("Ước số lẻ lớn nhất của số nguyên dương {0} là {1}",intN, max);
+            Console.WriteLine("Ước số lẻ lớn nhất của số nguyên dương {0} là {1}", intN, max);
 
         }
         public static int[] uocSoInt(int intN)
@@ -414,9 +414,9 @@ namespace ConsoleApp1
         {
             int sum = 0;
             int[] list = uocSoInt(intN);
-            for (int i =0; i< list.Length-1;i++)
+            for (int i = 0; i < list.Length - 1; i++)
             {
-                if(list[i] == intN)
+                if (list[i] == intN)
                 {
                     break;
                 }
@@ -424,28 +424,28 @@ namespace ConsoleApp1
             }
             if (sum == intN)
             {
-                Console.WriteLine("Số nguyên dương {0} là số hoàn thiện",intN);
+                Console.WriteLine("Số nguyên dương {0} là số hoàn thiện", intN);
             }
             else
             {
-                Console.WriteLine("Số nguyên dương {0} không phải là số hoàn thiện",intN);
+                Console.WriteLine("Số nguyên dương {0} không phải là số hoàn thiện", intN);
             }
 
         }
         public static void bai31(int intN) //Bài 31: Cho số nguyên dương n.Kiểm tra xem n có phải là số nguyên tố hay không
         {
             int[] list = uocSoInt(intN);
-            int count=0;
+            int count = 0;
 
-            for (int i=1; i<= list.Length;i++)
+            for (int i = 1; i <= list.Length; i++)
             {
-                if(intN% i == 0)
+                if (intN % i == 0)
                 {
                     count++;
                 }
                 if (count > 2)
                 { break; }
-                }
+            }
             if (count > 2)
             {
                 Console.WriteLine("Số nguyên dương {0} không phải là số nguyên tố", intN);
@@ -456,12 +456,12 @@ namespace ConsoleApp1
         {
             int value;
             Boolean result = int.TryParse(Math.Sqrt(intN).ToString(), out value);
-            if(result == false)
+            if (result == false)
             {
-                Console.WriteLine("Số nguyên dương {0} không phải là số chính phương",intN);
-            }else Console.WriteLine("Số nguyên dương {0} là số chính phương", intN);
+                Console.WriteLine("Số nguyên dương {0} không phải là số chính phương", intN);
+            } else Console.WriteLine("Số nguyên dương {0} là số chính phương", intN);
 
-           
+
             /*
              *Cách 2 
             int value;
@@ -470,9 +470,9 @@ namespace ConsoleApp1
             {
                 Console.WriteLine("Số nguyên dương {0} không phải là số chính phương",intN);
             }else Console.WriteLine("Số nguyên dương {0} là số chính phương", intN);*/
-             
-             
-             
+
+
+
 
 
         }
@@ -493,8 +493,8 @@ namespace ConsoleApp1
         }
         public static void bai34(int intN) //Bài 34: Tính S(n) = CanBac2(n+CanBac2(n – 1 + CanBac2( n – 2 + … + CanBac2(2 + CanBac2(1)  có n dấu căn
         {
-            double result= Math.Sqrt(1);
-            for (int i = 2; i <= intN; i++ )
+            double result = Math.Sqrt(1);
+            for (int i = 2; i <= intN; i++)
             {
                 result = Math.Sqrt(result + i);
             }
@@ -505,9 +505,9 @@ namespace ConsoleApp1
 
         {
             double result = Math.Sqrt(GiaiThua(0));
-            for (int i = 1;i<=intN;i++)
+            for (int i = 1; i <= intN; i++)
             {
-                result = Math.Sqrt(GiaiThua(i)+result);
+                result = Math.Sqrt(GiaiThua(i) + result);
             }
             Console.WriteLine(result);
 
@@ -515,29 +515,52 @@ namespace ConsoleApp1
         public static void bai37(int intN) // Bài 37: Tính S(n) = CanBac N(N + CanBac N – 1(N – 1 + … + CanBac3(3 + CanBac2(2))) có n – 1 dấu căn
         {
             double result = Math.Sqrt(2);
-            for (int i =3; i<=intN;i++)
+            for (int i = 3; i <= intN; i++)
             {
-                result = Math.Pow(i + result,(float)1/(float)i); // Pow(2,1/2) = SQRT(2)
+                result = Math.Pow(i + result, (float)1 / (float)i); // Pow(2,1/2) = SQRT(2)
             }
             Console.WriteLine(result);
         }
         public static void bai38(int intN) //Bài 38: Tính S(n) = CanBac N + 1(N + CanBac N(N – 1 +…+CanBac3(2 + CanBac2(1)))) có n dấu căn(Nhờ thầy check)
         {
             double result = 1; // SQRT(1) = 1
-            for (int i = 2; i<=intN;i++)
+            for (int i = 2; i <= intN; i++)
             {
-                result = Math.Pow(i+1, (float)1 /(i + 1));
+                result = Math.Pow(i + 1, (float)1 / (i + 1));
             }
             Console.WriteLine(result);
         }
         public static void bai39(int intN)//Bài 39: Tính S(n) = CanBac N + 1(N! + CanBacN((N – 1)! + … + CanBac3(2! + CanBac2(1!))) có n dấu căn
         {
             double result = 1; // SQRT(1!) =1
-            for (int i =2; i<=intN;i++ )
+            for (int i = 2; i <= intN; i++)
             {
-                result = Math.Pow(GiaiThua(i)+1, (float)1 / (i + 1));
+                result = Math.Pow(GiaiThua(i) + 1, (float)1 / (i + 1));
             }
             Console.WriteLine(result);
         }
+        public static void bai40(int intX, int intN) //Bài 40: Tính S(n) = CanBac2(x^n + CanBac2(x^n-1 + … + CanBac2(x^2 + CanBac2(x)))) có n dấu căn
+        {
+            double result = Math.Sqrt(intX);
+            for (int i = 2; i <= intN; i++)
+            {
+                result = Math.Sqrt(result + LuyThuaXN(intX, i));
+            }
+            Console.WriteLine(result);
+        }
+        public static void bai41(int intN) //Bài 41: Tính S(n) = 1 / (1 + 1 / ( 1 + 1 / (…. 1 + 1 / 1 + 1))) có n dấu phân số. Nhờ thầy giải chưa hiểu cái đề luôn
+        {
+            double result = 2;
+            for (int i =intN-1; i>= 1;i--)
+            {
+                result = 1+ 1/result;
+            }
+            result = (double)1/result;
+            Console.WriteLine(result);
+        }
+        
+        
+        
+        
     }
 }

@@ -571,8 +571,33 @@ namespace ConsoleApp1
                 }
             }
         }
-        
-        
-        
+        public static int[] danhSachChuSo(int intN) // Trả về danh sách các chữ số của số nguyên dương n
+        {
+            int[] list = new int[100];
+            int j = 0;
+
+            while (intN > 0)
+            {
+                list[j] = intN % 10;
+                intN /= 10;
+                j++;
+            }
+            return list;
+        }
+        public static int soLuongChuSo(int intN) // Trả về số lượng các chữ số của số nguyên dương n
+        {
+            int  j = 0;
+
+            while (intN > 0)
+            {
+                intN /= 10;
+                j++;
+            }
+            return j;
+        }
+        public static void bai43(int intN) //Bài 43: Hãy đếm số lượng chữ số của số nguyên dương n
+        {
+                Console.Write("Số lương chữ số của số nguyên dương {0} là: {1}", intN,soLuongChuSo(intN)); 
+        }            
     }
 }

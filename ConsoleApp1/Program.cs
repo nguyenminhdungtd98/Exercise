@@ -9,7 +9,7 @@ namespace ConsoleApp1
         {
             Console.OutputEncoding = Encoding.UTF8;
             Console.ForegroundColor = ConsoleColor.Red;
-            Baitap.bai42(11);        
+            Baitap.bai43(123456789);        
 
         }
 

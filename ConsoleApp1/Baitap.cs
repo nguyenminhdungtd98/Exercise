@@ -548,7 +548,7 @@ namespace ConsoleApp1
             }
             Console.WriteLine(result);
         }
-        public static void bai41(int intN) //Bài 41: Tính S(n) = 1 / (1 + 1 / ( 1 + 1 / (…. 1 + 1 / 1 + 1))) có n dấu phân số. Nhờ thầy giải chưa hiểu cái đề luôn
+        public static void bai41(int intN) //Bài 41: Tính S(n) = 1 / (1 + 1 / ( 1 + 1 / (…. 1 + 1 / 1 + 1))) có n dấu phân số. 
         {
             double result = 2;
             for (int i =intN-1; i>= 1;i--)
@@ -558,7 +558,19 @@ namespace ConsoleApp1
             result = (double)1/result;
             Console.WriteLine(result);
         }
-        
+        public static void bai42(int intN) //Bài 42: Cho n là số nguyên dương. Hãy tìm giá trị nguyên dương k lớn nhất sao cho S(k)  < n. Trong đó chuỗi k được định nghĩa như sau: S(k) = 1 + 2 + 3 + … + k
+        {
+            int result=0;
+            for (int i = 0; i< intN;i++)
+            {
+                result += i;
+                if (result >= intN)
+                {
+                    Console.WriteLine("Giá trị k cần tìm để thỏa mản yêu cầu đề là: {0}",i-1);
+                    break;
+                }
+            }
+        }
         
         
         

@@ -254,7 +254,7 @@ namespace ConsoleApp1
                 Console.Write(items + "  ");
             }
         }
-        public static List<int> Uocso(int intN)
+        public static List<int> Uocso(int intN)  //Tìm ước số dùng list
         {
             List<int> list = new List<int>();
             for (int i = 1; i <= intN; i++)
@@ -409,7 +409,7 @@ namespace ConsoleApp1
                 }
             }
             return list;
-        }
+        } // Tìm ước số dùng mảng
         public static void bai30(int intN) //Bài 30: Cho số nguyên dương n. Kiểm tra xem n có phải là số hoàn thiện hay không
         {
             int sum = 0;
@@ -854,6 +854,40 @@ namespace ConsoleApp1
                 Console.WriteLine("Các chữ số của số nguyên dương {0} xếp giảm dần từ trái sang phải", intN); 
             }
             else Console.WriteLine("Các chữ số của số nguyên dương {0} không xếp giảm dần từ trái sang phải", intN);
+        }
+        public static List<int> uocSoXY(int intX, int intY) // Tìm ước số chung của hai số x,y trả về list
+        {
+            int temp = 0;
+            if (intX >= intY)
+            {
+                temp = intX;
+            }
+            else temp = intY;
+            List<int> list = new List<int>();
+            for (int i = 1; i <= temp; i++)
+            {
+                if ((intX % i == 0) &&(intY%i==0))
+                {
+                    list.Add(i);
+                }
+            }
+            return list;
+        }
+        public static void bai62(int intX, int intY) //Bài 62: Cho 2 số nguyên dương a và b. Hãy tìm ước chung lớn nhất của 2 số này.
+        {
+            List<int> list = uocSoXY(intX,intY);
+            Console.Write(list.Max());
+            /*
+             Bài này mình sẽ không dùng mảng, bạn nào còn chưa quen thao tác với mảng thì làm lại bằng cách dùng mảng nhé!    
+             */
+        }
+        public static void bai63(int intX, int intY)//Bài 63: Cho 2 số nguyên dương a và b. Hãy tìm bội chung nhỏ nhất của 2 số này
+        {
+            //BCNN = a*b/(UCLN(a,b))
+            List<int> list = uocSoXY(intX, intY);
+            int UCLN = list.Max();
+            int BCNN = (intX * intY)/UCLN;
+            Console.WriteLine("Bội chung nhỏ nhất của {0} và {1} là: {2}",intX,intY, BCNN);
         }
     }
 

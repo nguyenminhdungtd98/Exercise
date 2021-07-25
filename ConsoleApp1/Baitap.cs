@@ -645,5 +645,18 @@ namespace ConsoleApp1
             }
             Console.WriteLine("Tổng các chữ số chẳn của số nguyên dương {0} là: {1}", intN, result);
         }
+        public static void bai48(int intN) //Bài 48: Hãy tính tích các chữ số lẻ của số nguyên dương n
+        {
+            int[] list = danhSachChuSo(intN);
+            int result = 1;
+            for (int i = 0; i < soLuongChuSo(intN); i++)
+            {
+                if (list[i]%2!=0)
+                {
+                    result *= list[i];
+                }
+            }
+            Console.WriteLine("Tích các chữ số lẻ của số nguyên dương {0} là: {1}", intN, result);
+        }
     }
 }

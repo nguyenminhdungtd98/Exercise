@@ -663,17 +663,23 @@ namespace ConsoleApp1
             int[] list = danhSachChuSo(intN);
             Console.WriteLine("Chữ số đầu tiên của số nguyên dương {0} là: {1}", intN, list[soLuongChuSo(intN)-1]);
         }
-        public static void bai50(int intN) //Bài 50: Hãy tìm số đảo ngược của số nguyên dương n
+        public static int soDao(int intN) // Tìm số đảo của số N
         {
             int[] list = danhSachChuSo(intN);
             int result = 0;
             int j = soLuongChuSo(intN);
             for (int i = 0; i < soLuongChuSo(intN); i++)
             {
-                result += (list[i] * LuyThuaXN(10, j-1));
+                result += (list[i] * LuyThuaXN(10, j - 1));
                 j--;
             }
-            Console.WriteLine(" Số đảo ngược của số nguyên dương {0} là: {1}", intN, result);
+            return result;
+        }
+        public static void bai50(int intN) //Bài 50: Hãy tìm số đảo ngược của số nguyên dương n
+        {
+            int[] list = danhSachChuSo(intN);
+
+            Console.WriteLine(" Số đảo ngược của số nguyên dương {0} là: {1}", intN, soDao(intN));
         }
         public static void bai51(int intN) //Bài 51: Tìm chữ số lớn nhất của số nguyên dương n
         {
@@ -797,6 +803,13 @@ namespace ConsoleApp1
                 Console.WriteLine("Số nguyên dương {0} có chữ chữ số lẻ", intN);
             }
             else Console.WriteLine("Số nguyên dương {0} có toàn là chữ số chẳn", intN);
+        }
+        public static void bai59(int intN) //Bài 59: Hãy kiểm tra số nguyên dương n có phải là số đối xứng hay không
+        {
+            if (intN == soDao(intN))
+            {
+                Console.WriteLine(" Số nguyên dương {0} là: số đối xứng", intN);
+            }else Console.WriteLine(" Số nguyên dương {0} không phải là: số đối xứng", intN);
         }
     }
 }

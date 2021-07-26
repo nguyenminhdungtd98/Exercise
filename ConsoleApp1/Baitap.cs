@@ -1070,6 +1070,44 @@ namespace ConsoleApp1
             }
             Console.WriteLine("S({0},{1}) = (-1)^n+1 * x^2n+1/(2n + 1)! = {2}", intX, intN, result);
         }
+        public static void bai75(int intN) //Bài 75: Kiểm tra số nguyên 4 byte có dạng 2^k hay không
+        {
+            int temp = intN;
+            bool result=true;
+            while (temp>1)
+            {
+                if (temp % 2 !=0)
+                {
+                    result = false;
+                    break;
+                }
+                temp /= 2;
+            }
+            if (result == false)
+            {
+                Console.WriteLine("số nguyên {0} không có dạng 2^k", intN);
+            }
+            else Console.WriteLine("số nguyên {0} có dạng 2^k", intN);
+        }
+        public static void bai76(int intN) //Bài 76: Kiểm tra số nguyên 4 byte có dạng 3^k hay không
+        {
+            int temp = intN;
+            bool result = true;
+            while (temp > 1)
+            {
+                if (temp % 3 != 0)
+                {
+                    result = false;
+                    break;
+                }
+                temp /= 3;
+            }
+            if (result == false)
+            {
+                Console.WriteLine("số nguyên {0} không có dạng 3^k", intN);
+            }
+            else Console.WriteLine("số nguyên {0} có dạng 3^k", intN);
+        }
     }
 
 

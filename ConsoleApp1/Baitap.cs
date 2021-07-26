@@ -909,7 +909,7 @@ namespace ConsoleApp1
                 Console.WriteLine("Phương trình có 1 nghiệm duy nhất x=-b/a => x={0}",(float)-b/a);
             }
         }
-        public static void bai65() //Giải phương trình bậc hai ax^2 + bx + c =0
+        public static void bai65() //Giải phương trình bậc 2 ax^2 + bx + c =0
         {
             int a = 0, b = 0, c = 0,delta=0;
             Console.WriteLine("----Giải phương trình bậc hai ax^2 + bx + c = 0----");
@@ -934,6 +934,32 @@ namespace ConsoleApp1
                 Console.WriteLine("x1=(-b + √delta)/2a => x1 = {0}", (float)((-b+Math.Sqrt(delta))/(2 * a)));
                 Console.WriteLine("x2=(-b - √delta)/2a => x2 = {0}", (float)((-b - Math.Sqrt(delta)) / (2 * a)));
             }
+        }
+        public static void bai66() // Giải phương trình bậc 4 
+        {
+
+        }
+        public static void bai67(int intX,int intN) //Bài 67: Tính S(x, n) = x – x^2 + x^3 + … + (-1)^n+1 * x^n 
+        {
+            List<double> listCal = new List<double>();
+            List<double> listNum = new List<double>();
+            double result = 0;
+            for (int i = 1; i <= intN;i++)
+            {
+                result += Math.Pow(-1, (double)(i+1)) * Math.Pow(intX,i);
+                listCal.Add(Math.Pow(-1, i + 1));
+                listNum.Add(i);
+            }
+            Console.Write("S({0},{1})= ",intX,intN);
+            for (int i =0; i<intN;i++)
+            {
+                if ((listCal[i] * intX >0) && (i>0))
+                {
+                    Console.Write("+");
+                }
+                Console.Write("{0}^{1}",listCal[i]*intX,listNum[i]);
+            }
+            Console.Write(" = {0}", result);
         }
     }
 

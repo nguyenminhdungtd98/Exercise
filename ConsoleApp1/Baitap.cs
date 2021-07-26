@@ -370,7 +370,6 @@ namespace ConsoleApp1
         {
             int[] list = uocSoInt(intN);
             int[] list1 = new int[200];
-            int j = 0;
             int k = 0;
             for (int i = 0; i < list.Length; i++)
             {
@@ -958,6 +957,50 @@ namespace ConsoleApp1
                     Console.Write("+");
                 }
                 Console.Write("{0}^{1}",listCal[i]*intX,listNum[i]);
+            }
+            Console.Write(" = {0}", result);
+        }
+        public static void bai68(int intX, int intN) //Bài 68: Tính S(x, n) = -x^2 + x^4  + … + (-1)^n * x^2n
+        {
+            List<double> listCal = new List<double>();
+            List<double> listNum = new List<double>();
+            double result = 0;
+            for (int i = 1; i <= intN; i++)
+            {
+                result += Math.Pow(-1,i) * Math.Pow(intX, 2*i);
+                listCal.Add(Math.Pow(-1,i));
+                listNum.Add(2*i);
+            }
+            Console.Write("S({0},{1})= ", intX, intN);
+            for (int i = 0; i < intN; i++)
+            {
+                if ((listCal[i] * intX > 0) && (i > 0))
+                {
+                    Console.Write("+");
+                }
+                Console.Write("{0}^{1}", listCal[i] * intX, listNum[i]);
+            }
+            Console.Write(" = {0}", result);
+        }
+        public static void bai69(int intX, int intN) //Bài 69: Tính S(x, n) = x – x^3 + x^5 + … + (-1)^n * x^2n+1
+        {
+            List<double> listCal = new List<double>();
+            List<double> listNum = new List<double>();
+            double result = 0;
+            for (int i = 1; i <= intN; i++)
+            {
+                result += Math.Pow(-1, i) * Math.Pow(intX, (2*i)+1);
+                listCal.Add(Math.Pow(-1, i));
+                listNum.Add((2 * i)+1);
+            }
+            Console.Write("S({0},{1})= ", intX, intN);
+            for (int i = 0; i < intN; i++)
+            {
+                if ((listCal[i] * intX > 0) && (i > 0))
+                {
+                    Console.Write("+");
+                }
+                Console.Write("{0}^{1}", listCal[i] * intX, listNum[i]);
             }
             Console.Write(" = {0}", result);
         }

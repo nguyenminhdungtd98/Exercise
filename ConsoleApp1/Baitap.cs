@@ -889,6 +889,52 @@ namespace ConsoleApp1
             int BCNN = (intX * intY)/UCLN;
             Console.WriteLine("Bội chung nhỏ nhất của {0} và {1} là: {2}",intX,intY, BCNN);
         }
+        public static void bai64() // Giải phương trình bậc nhất ax + b =0
+        {
+            int a=0, b=0;
+            Console.WriteLine("----Giải phương trình bậc nhất ax + b = 0----");
+            Console.WriteLine("Vui lòng nhập vào cơ số a: ");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Vui lòng nhập vào cơ số b: ");
+            b = int.Parse(Console.ReadLine());
+            if ((a==0) && (b==0))
+            {
+                Console.WriteLine("Phương trình có vô số nghiệm");
+            }else if ((a==0) && (b!=0))
+            {
+                Console.WriteLine("Phương trình vô nghiệm");
+            }
+            else
+            {
+                Console.WriteLine("Phương trình có 1 nghiệm duy nhất x=-b/a => x={0}",(float)-b/a);
+            }
+        }
+        public static void bai65() //Giải phương trình bậc hai ax^2 + bx + c =0
+        {
+            int a = 0, b = 0, c = 0,delta=0;
+            Console.WriteLine("----Giải phương trình bậc hai ax^2 + bx + c = 0----");
+            Console.WriteLine("Vui lòng nhập vào cơ số a: ");
+            a = int.Parse(Console.ReadLine());
+            Console.WriteLine("Vui lòng nhập vào cơ số b: ");
+            b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Vui lòng nhập vào cơ số c: ");
+            c = int.Parse(Console.ReadLine());
+            delta = (b * b) - (4 * a * c);
+            if(delta < 0)
+            {
+                Console.WriteLine("Phương trình vô nghiệm");
+            }else if (delta == 0)
+            {
+                Console.WriteLine("Phương trình có nghiệm kép");
+                Console.WriteLine("x=-b/(2a) => x = {0}", (float)(-b/(2*a)));
+            }
+            else
+            {
+                Console.WriteLine("phương trình có 2 nghiệm phân biệt");
+                Console.WriteLine("x1=(-b + √delta)/2a => x1 = {0}", (float)((-b+Math.Sqrt(delta))/(2 * a)));
+                Console.WriteLine("x2=(-b - √delta)/2a => x2 = {0}", (float)((-b - Math.Sqrt(delta)) / (2 * a)));
+            }
+        }
     }
 
 

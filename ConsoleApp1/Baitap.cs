@@ -1108,7 +1108,320 @@ namespace ConsoleApp1
             }
             else Console.WriteLine("số nguyên {0} có dạng 3^k", intN);
         }
+        // Bài 77,78,79 trùng các bài đã làm
+        public static void bai82(double doubleA, double doubleB, double doubleC) //Bài 82: Viết chương trình tìm số lớn nhất trong 3 số thực a, b, c
+        {
+            double[] list = new double[3];
+            list[0] = doubleA;
+            list[1] = doubleB;
+            list[2] = doubleC;
+            double max = list[0];
+            for (int i = 0; i < list.Length; i++)
+            {
+                if (i < (list.Length - 1))
+                {
+                    if (max < list[i + 1])
+                    {
+                        max = list[i + 1];
+                    }
+                }
+            }
+            Console.WriteLine("Số lớn nhất trong 3 số ({0}) - ({1}) - ({2}) là ({3})",doubleA,doubleB,doubleC,max);
+        }
+        public static void bai83() //Bài 83: Viết chương trình nhập 2 số thực, kiểm tra xem chúng có cùng dấu hay không
+        {
+            Console.Write("Nhập vào số thực a: ");
+            double a = double.Parse(Console.ReadLine());
+            Console.Write("Nhập vào số thực b: ");
+            double b = double.Parse(Console.ReadLine());
+            if (((a>0) && (b>0)) || ((a < 0) && (b < 0)))
+            {
+                Console.Write("Hai số thực {0} và {1} cùng dấu", a, b);
+            }
+            else Console.Write("Hai số thực {0} và {1} khác dấu",a,b);
+        }
+        public static void bai84() //Bài 84: Viết chương trình giải và biện luận phương trình bậc nhất ax + b = 0
+        {
+            bai64(); //Trùng nên gọi lại thôi không giải nhé
+        }
+        public static void bai85() //Bài 85: Nhập vào tháng của 1 năm. Cho biết tháng thuộc quý mấy trong năm
+        {
+            Console.Write("Nhập vào tháng: ");
+            int intMonth = int.Parse(Console.ReadLine());
+            if (intMonth <4)
+            {
+                Console.Write("Tháng {0} thuộc quý 1",intMonth);
+            }
+            else if (intMonth<7)
+            {
+                Console.Write("Tháng {0} thuộc quý 2", intMonth);
+            }
+            else if (intMonth < 10)
+            {
+                Console.Write("Tháng {0} thuộc quý 3", intMonth);
+            }
+            else
+            {
+                Console.Write("Tháng {0} thuộc quý 4", intMonth);
+            }
+        }
+        public static void bai86(int intN) //Bài 86: Tính S(n) = 1^3 + 2^3 + … + N^3
+        {
+            double result = 0;
+            for (int i=0;i<=intN;i++)
+            {
+                result += LuyThuaXN(i,3);
+            }
+            Console.WriteLine("S({0}) = 1^3 + 2^3 + … + N^3 = {1}",intN, result);
+        }
+        public static void bai87() //Bài 87: Tìm số nguyên dương n nhỏ nhất sao cho 1 + 2 + … + n > 10000
+        {
+            int sum=0,result=0;
+            for (int i = 1; i <1000; i++)
+            {
+                if (sum>10000)
+                {
+                    result = i;
+                    break;
+                }
+                sum += i;
+            }
+            
+            Console.WriteLine("Số N nhỏ nhất để 1 + 2 +...+ n > 10000 là {0}, Tổng tính từ 1 đến {0} là {1}",result,sum);
+        }
+        public static void bai88()//Bài 88: Hãy sử dụng vòng lặp for để xuất tất cả các ký tự từ A đến Z
+        {
+            for (int i =65;i<=90;i++) // Dựa vào bảng mã ASCII
+            {
+                char c = Convert.ToChar(i);
+                string d = c.ToString();
+                Console.Write(d + "  ");
+            }
+        }
+        public static void bai89(int intN)//Bài 89: Viết chương trình tính tổng các giá trị lẻ nguyên dương nhỏ hơn N
+        {
+            int result=0;
+            for(int i =1; i <= intN;i++)
+            {
+                if (i % 2 !=0)
+                {
+                    result += i;
+                }
+            }
+            Console.WriteLine("Tổng các giá trị lẻ nguyên dương nhỏ hơn {0} là: {1}",intN,result);
+        }
+        public static void bai90(int intN) //Bài 90: Viết chương trình tìm số nguyên dương m lớn nhất sao cho 1 + 2 + … + m < N
+        {
+            int result = 0, sum =0;
+            for (int i= 1; i <= intN;i++)
+            {
+                if (sum >= intN)
+                {
+                    result = i - 2;
+                    break;
+                }
+                sum += i;
+            }
+            Console.WriteLine(result);
+        }
+        public static void bai91()//Bài 91: In tất cả các số nguyên dương lẻ nhỏ hơn 100
+        {
+            for (int i =1;i<100;i++)
+            {
+                if (i % 2 !=0)
+                {
+                    Console.Write(i + "  ");
+                }
+            }
+        }
+        public static void bai92(int intX, int intY) //Bài 92: Tìm ước số chung lớn nhất của 2 số nguyên dương
+        {
+            bai62(intX,intY);
+        }
+        public static void bai93(int intN) //Bài 93: Viết chương trình kiểm tra 1 số có phải là số nguyên tố hay không
+        {
+            bai31(intN); // Định nghĩa: Số nguyên tố là số chỉ chia hết cho 1 và chính nó. Ngoài ra không có chia hết cho tz nào nữa hết.
+        }
+        public static void bai94() //Bài 94: Viết chương trình in ra tất cả các số lẻ nhỏ hơn 100 trừ các số 5, 7, 93
+        {
+            for (int i = 1; i < 100; i++)
+            {
+                if ((i % 2 != 0) && (i!=5) && (i!=7) && (i!=93))
+                {
+                    Console.Write(i + "  ");
+                }
+            }
+        }
+        public static void bai95() //Bài 95: Viết chương trình nhập 3 số thực. Hãy thay tất cả các số âm bằng trị tuyệt đối của nó
+        {
+            Console.WriteLine("Bài 95: Viết chương trình nhập 3 số thực. Hãy thay tất cả các số âm bằng trị tuyệt đối của nó");
+            Console.Write("Nhập vào số thực a:");
+            double a = double.Parse(Console.ReadLine());
+            Console.Write("Nhập vào số thực b:");
+            double b = double.Parse(Console.ReadLine());
+            Console.Write("Nhập vào số thực c:");
+            double c = double.Parse(Console.ReadLine());
+            double A=0,B=0,C=0;
+            if (a < 0)
+            {
+                A = -a;
+            }
+            else A = a;
+            if (b < 0)
+            {
+                B = -b;
+            }
+            else B = b;
+            if (c < 0)
+            {
+                C = -c;
+            }
+            else C = c;
+                Console.WriteLine("Trị tuyệt đối cho {0},{1},{2} có kết quả là: {3},{4},{5}",a,b,c,A,B,C);
+        }
+        public static double LuyThuaXN(double intX, int intN)
+        {
+            double resultMul = 1;
+
+            for (int i = 1; i <= intN; i++)
+            {
+                resultMul *= intX;
+            }
+            return resultMul;
+        } // Lũy thừa trả về double
+        public static void bai96()//Bài 96: Viết chương trình nhập giá trị x sau tính giá trị của hàm số
+        {//f(x) = 2x^2 + 5x + 9 khi x >= 5, f(x) = -2x^2 + 4x – 9 khi x < 5
+            Console.WriteLine("Bài 96: Viết chương trình nhập giá trị x sau tính giá trị của hàm số");
+            Console.WriteLine("f(x) = 2x^2 + 5x + 9 khi x >= 5, f(x) = -2x^2 + 4x – 9 khi x < 5");
+            Console.Write("Nhập vào giá trị của x: ");
+            double doubleX = double.Parse(Console.ReadLine()); 
+            double result = 0;
+            if(doubleX < 5)
+            {
+                result = -2 * LuyThuaXN(doubleX, 2) + (4 * doubleX) - 9;
+                Console.WriteLine("f({0}) = -2x^2 + 4x – 9 = {1}", doubleX, result);
+            }
+            else
+            {
+                result = 2 * LuyThuaXN(doubleX, 2) + (5 * doubleX) + 9;
+                Console.WriteLine("f({0}) = f(x) = 2x^2 + 5x + 9 = {1}", doubleX, result);
+            }
+
+        }
+        public static void bai97() //Bài 97: Viết chương trình nhập 3 cạnh của 1 tam giác, cho biết đó là tam giác gì
+        {
+            Console.WriteLine("Bài 97: Viết chương trình nhập 3 cạnh của 1 tam giác, cho biết đó là tam giác gì");
+            Console.Write("Nhập vào cạnh a của tam giác: ");
+            int intA = int.Parse(Console.ReadLine());
+            Console.Write("Nhập vào cạnh b của tam giác: ");
+            int intB = int.Parse(Console.ReadLine());
+            Console.Write("Nhập vào cạnh c của tam giác: ");
+            int intC = int.Parse(Console.ReadLine());
+            List<int> list = new List<int>();
+            list.Add(intA);
+            list.Add(intB);
+            list.Add(intC);
+            list.Sort();
+            int intMax = list[2];
+            int intTemp = LuyThuaXN(list[0],2) + LuyThuaXN(list[1],2);
+            bool boolCheck = false;
+            if (LuyThuaXN(intMax,2) == intTemp)
+            {
+                boolCheck = true;
+            }
+            if ((intA == intB) && (intA == intC) && (intB == intC))
+            {
+                Console.WriteLine("Tam giác đều");
+            }else if ((intA == intB)  ||  (intB == intC) || (intC == intA) )
+            {
+                Console.WriteLine("Tam giác cân");
+            }
+            else if (((intA == intB) || (intB == intC) || (intC == intA)) && boolCheck == true)
+            {
+                Console.WriteLine("Tam giác vuông cân");
+            }else if (boolCheck == true)
+            {
+                Console.WriteLine("Tam giác vuông");
+            }else Console.WriteLine("Tam giác bình thường");
+
+        }
+        public static List<double> nhapNSoThucTuBanPhim(int intN)// Nhập N số thực từ bàn phím trả về List<double>
+        {
+            List<double> list = new List<double>();
+            for (int i = 1; i <= intN;i++)
+            {
+                Console.Write("Nhập vào cơ số thứ {0} : ", i);
+                list.Add(double.Parse(Console.ReadLine()));
+            }
+            return list;
+        } 
+        public static void bai98() //Bài 98: Lập chương trình giải hệ: ax + by = c, Dx + ey = f. Các hệ số nhập từ bàn phím
+        {
+            Console.WriteLine("Bài 98: Lập chương trình giải hệ: ax + by = c(1)\n \t \t \t \t  dx + ey = f(2)");
+            List<double> list = nhapNSoThucTuBanPhim(6);
+            double a = list[0];
+            double b = list[1];
+            double c = list[2];
+            double d = list[3];
+            double e = list[4];
+            double f = list[5];
+            Console.Write("Các hệ số đã nhập a = {0}, b = {1}, c = {2}, d = {3}, e = {4}, f = {5}",a,b,c,d,e,f);
+            double x,y;
+            // Thế x = (c - b * y) / a; vào PT (2) 
+            y = (f - (d * c / a)) / (e - (d * b / a));
+            x = (double)((c- (b*y))/a);
+            Console.WriteLine("\nKết quả:\nx= {0}\ty={1}",x,y);
+        }
+        public static void bai99()//Bài 99: Viết chương trình nhập vào 3 số thực. Hãy in 3 số ấy ra màn hình theo thứ tự tang dần mà chỉ dùng tối đa 1 biến phụ
+        {
+            /* cách hay hơn
+            Console.WriteLine("Bài 99: Viết chương trình nhập vào 3 số thực\nHãy in 3 số ấy ra màn hình theo thứ tự tăng dần mà chỉ dùng tối đa 1 biến phụ");
+            List<double> list = nhapNSoThucTuBanPhim(3);
+            double a = list[0];
+            double b = list[1];
+            double c = list[2];
+            list.Sort();
+            Console.WriteLine("In 3 số ra màn hình theo thứ tự tăng dần:");
+            foreach (var item in list)
+            {
+                Console.Write(item+"\t\t");
+            }
+            */
+            Console.WriteLine("Bài 99: Viết chương trình nhập vào 3 số thực\nHãy in 3 số ấy ra màn hình theo thứ tự tăng dần mà chỉ dùng tối đa 1 biến phụ");
+            List<double> list = nhapNSoThucTuBanPhim(3);
+            double[] list1 = new double[3];
+            double temp = 0;
+            int i, j;
+            for (i =0; i<list1.Length;i++)
+            {
+                list1[i] = list[i];
+            }
+            // Sắp xếp mảng theo thứ tự tăng dần
+            for ( i = 0; i < 3; i++)
+            {
+                for (j =i+1;j< 3;j++ )
+                {
+                    if (list1[i] > list1[j])
+                    {
+                         temp= list1[i];
+                        list1[i] = list1[j];
+                        list1[j] = temp;
+                    }
+                }
+            }
+            Console.WriteLine("In 3 số ra màn hình theo thứ tự tăng dần:");
+            for ( i = 0; i < list1.Length; i++)
+            {
+                Console.Write( list1[i] + "\t\t");
+            }
+        }
+        public static void bai100() //Bài 100: Viết chương trình giải phương trình bậc 2 *giống bài 65
+        {
+            bai65();
+        }
+        public static void bai101() //Bài 101: Viết chương trình nhập tháng, năm. Hãy cho biết tháng đó có bao nhiêu ngày
+        {
+
+        }
     }
-
-
 }

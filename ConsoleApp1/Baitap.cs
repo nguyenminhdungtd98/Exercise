@@ -1004,6 +1004,72 @@ namespace ConsoleApp1
             }
             Console.Write(" = {0}", result);
         }
+        public static void bai70(int intN)//Bài 70: Tính S(n) = 1 – 1/(1 + 2) + 1/(1 + 2 + 3)  + … + (-1)^n+1 * 1/(1 + 2 + 3+ … + n)
+        {
+            double result = 0;
+            double Denominator = 0;
+            for (int i=1; i<=intN; i++)
+            {
+                for (int j =1;j<=i;j++)
+                {
+                    Denominator += j;
+                }
+                result += (Math.Pow(-1,i+1))*((double)(1 / Denominator));
+                Denominator = 0;
+            }
+            Console.WriteLine("S({0}) = (-1)^n+1 * 1/(1 + 2 + 3+ … + n) = {1}",intN,result);
+        }
+        public static void bai71(int intX, int intN) //Bài 71: Tính S(x, n) = -x + x^2/(1 + 2) – x^3/(1 + 2 + 3) + … + (-1)^n * x^n/(1 + 2 +… + n)
+        {
+            double result = 0;
+            double Denominator = 0;
+            for (int i = 1; i <= intN; i++)
+            {
+                for (int j = 1; j <= i; j++)
+                {
+                    Denominator += j;
+                }
+                result += (Math.Pow(-1,i)) * ((double)( Math.Pow(intX,i) / Denominator));
+                Denominator = 0;
+            }
+            Console.WriteLine("S({0},{1}) = (-1)^n * x^n/(1 + 2 +… + n) = {2}", intX,intN, result);
+        }
+        public static void bai72(int intX, int intN) //Bài 72: Tính S(x, n) = – x + x^2/2! – x^3/3! + … + (-1)^n * x^n/n!
+        {
+            double result = 0;
+            double Denominator = 0;
+            for (int i = 1; i <= intN; i++)
+            {
+                Denominator = GiaiThua(i);
+                result += (Math.Pow(-1, i)) * ((double)(Math.Pow(intX, i) / Denominator));
+                Denominator = 0;
+            }
+            Console.WriteLine("S({0},{1}) = (-1)^n * x^n/n! = {2}", intX, intN, result);
+        }
+        public static void bai73(int intX, int intN)//Bài 73: Tính S(x, n) = -1 + x^2/2! – x^4/4! + … + (-1)^n+1 * x^2n/(2n)!
+        {
+            double result = 0;
+            double Denominator = 0;
+            for (int i = 0; i <= intN; i++)
+            {
+                Denominator = GiaiThua(2*i);
+                result += (Math.Pow(-1, i+1)) * ((double)(Math.Pow(intX, 2*i) / Denominator));
+                Denominator = 0;
+            }
+            Console.WriteLine("S({0},{1}) = (-1)^n+1 * x^2n/(2n)! = {2}", intX, intN, result);
+        }
+        public static void bai74(int intX, int intN) //Bài 74: Tính S(x, n) = – x + x^3/3! – x^5/5! + … + (-1)^n+1 * x^2n+1/(2n + 1)!
+        {
+            double result = 0;
+            double Denominator = 0;
+            for (int i = 0; i <= intN; i++)
+            {
+                Denominator = GiaiThua((2 * i)+1);
+                result += (Math.Pow(-1, i + 1)) * ((double)(Math.Pow(intX, (2 * i)+1) / Denominator));
+                Denominator = 0;
+            }
+            Console.WriteLine("S({0},{1}) = (-1)^n+1 * x^2n+1/(2n + 1)! = {2}", intX, intN, result);
+        }
     }
 
 

@@ -15,7 +15,9 @@ namespace ConsoleApp1
             {
                 intSum += i;
             }
+
             Console.WriteLine("Tổng các số nguyên N là {0}", intSum);
+
         }
         public static void bai2(int intNum) //Bài 2: Tính S(n) = 1 ^ 2 + 2 ^ 2 + … +n ^ 2
         {

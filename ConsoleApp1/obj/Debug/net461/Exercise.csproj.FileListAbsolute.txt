@@ -1,0 +1,8 @@
+D:\Code\Project Visual Studio\NhapMonLapTrinh\BT1\Exercise\ConsoleApp1\obj\Debug\net461\Exercise.csprojAssemblyReference.cache
+D:\Code\Project Visual Studio\NhapMonLapTrinh\BT1\Exercise\ConsoleApp1\obj\Debug\net461\Exercise.csproj.CoreCompileInputs.cache
+D:\Code\Project Visual Studio\NhapMonLapTrinh\BT1\Exercise\ConsoleApp1\obj\Debug\net461\Exercise.AssemblyInfoInputs.cache
+D:\Code\Project Visual Studio\NhapMonLapTrinh\BT1\Exercise\ConsoleApp1\obj\Debug\net461\Exercise.AssemblyInfo.cs
+D:\Code\Project Visual Studio\NhapMonLapTrinh\BT1\Exercise\ConsoleApp1\bin\Debug\net461\Exercise.exe
+D:\Code\Project Visual Studio\NhapMonLapTrinh\BT1\Exercise\ConsoleApp1\bin\Debug\net461\Exercise.pdb
+D:\Code\Project Visual Studio\NhapMonLapTrinh\BT1\Exercise\ConsoleApp1\obj\Debug\net461\Exercise.exe
+D:\Code\Project Visual Studio\NhapMonLapTrinh\BT1\Exercise\ConsoleApp1\obj\Debug\net461\Exercise.pdb

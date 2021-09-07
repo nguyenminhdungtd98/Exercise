@@ -14,3 +14,4 @@ C:\Users\nguye\Documents\Visual Studio 2019\Project\LinQ\ConsoleApp1\ConsoleApp1
 C:\Users\nguye\Documents\Visual Studio 2019\Project\LinQ\ConsoleApp1\ConsoleApp1\obj\Debug\net5.0\ref\Exercise.dll
 C:\Users\nguye\Documents\Visual Studio 2019\Project\LinQ\ConsoleApp1\ConsoleApp1\obj\Debug\net5.0\Exercise.pdb
 C:\Users\nguye\Documents\Visual Studio 2019\Project\LinQ\ConsoleApp1\ConsoleApp1\obj\Debug\net5.0\Exercise.genruntimeconfig.cache
+D:\Code\Project Visual Studio\NhapMonLapTrinh\BT1\Exercise\ConsoleApp1\obj\Debug\net5.0\Exercise.pdb

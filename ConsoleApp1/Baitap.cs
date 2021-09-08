@@ -438,7 +438,7 @@ namespace ConsoleApp1
             int[] list = UocSoInt(intN);
             int count = 0;
 
-            for (int i = 1; i <= list.Length; i++)
+            for (int i = 1; i <= intN; i++)
             {
                 if (intN % i == 0)
                 {
